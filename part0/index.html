@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Este es Gauss</title>
 </head>
 
 <body>
-    <h1>Carl Gauss</h1>
+
+    <!--h1>Carl Gauss</h1>
     <br>
     <p>El es el príncipe de las matemáticas</p>
     <br>
@@ -30,7 +35,18 @@
                 <textarea id="msg" name="user_message"></textarea>
             </li>
         </ul>
-    </form>
+    </form-->
+
+    <h2>Ejemplo de Diagrama de Secuencia</h2>
+    <div class="mermaid">
+        sequenceDiagram
+        participant Usuario
+        participant Sistema
+        Usuario->>Sistema: Enviar solicitud
+        Sistema-->>Usuario: Confirmación recibida
+        Usuario->>Sistema: Enviar datos
+        Sistema-->>Usuario: Respuesta final
+    </div>
 
 </body>
 
