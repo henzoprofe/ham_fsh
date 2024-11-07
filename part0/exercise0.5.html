@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henzo Alejandro Arrué Muñoz exercise 0.5</title>
+</head>
+
+<body>
+    <div class="mermaid">
+        sequenceDiagram
+        participant Browser
+        participant Server
+
+        Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+        activate Server
+        Server-->>Browser: HTML-code
+        deactivate Server
+
+        Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        activate Server
+        Server-->>Browser: main.css
+        deactivate Server
+
+        Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+        activate Server
+        Server-->>Browser: spa.js
+        deactivate Server
+
+        Note left of Browser: The browser starts executing the <br> JavaScript code that fetches the<br>JSON from the server
+
+        Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        activate Server
+        Server-->>Browser: [{ "content": "This is the messages", "date": "2024-11-06" }, ... ]
+        deactivate Server
+
+        Note left of Browser: The browser executes the<br>callback function that<br>renders the notes to display
+
+    </div>
+</body>
+
+</html>
